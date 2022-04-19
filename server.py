@@ -275,7 +275,7 @@ def chat(client_socket, message, user_name): # add , user_name
         client_socket.send(bytes(helper, "utf-8"))
 
 
-# threads_arr = []
+
 #now start the connection/communication loop
 while True:
     client_socket, address = server_socket.accept()
@@ -284,7 +284,5 @@ while True:
 
 
 
-    # threads_arr.append(t)
     t = threading.Thread(target=handle, args=(client_socket,))
     t.start()
-    # print(f'Active Clients {threading.active_count() - 1}')
